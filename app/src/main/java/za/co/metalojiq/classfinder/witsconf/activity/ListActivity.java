@@ -3,6 +3,8 @@ package za.co.metalojiq.classfinder.witsconf.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -13,6 +15,8 @@ import za.co.metalojiq.classfinder.witsconf.adapter.ListAdapter;
 import za.co.metalojiq.classfinder.witsconf.model.PowerTools;
 
 public class ListActivity extends AppCompatActivity {
+
+    private static final String TAG = "ListActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +50,16 @@ public class ListActivity extends AppCompatActivity {
 
         //if lang is null then it was not from the find power tool button
         if (lang != null) {
+            //TAG variable is really helpful like u can just copy and past this in the main acitvity
+            Log.d(TAG, "language that was selected" + lang);
+
             //if you dont do new Arr.... you will get a nullPointer exception!!!!
             ArrayList<PowerTools> powerTools = new ArrayList<PowerTools>();
             Toast.makeText(this, "hello " +  name + " from http://jetbrains/student", Toast.LENGTH_LONG).show();
             for (int i = 0; i < tools.size() ; i++) {
                 //for each loop
                 for (PowerTools.LANGUAGE l : tools.get(i).getLang()) {
-                    if (l.name() == lang) {
+                    if (TextUtils.equals(l.name(), lang)) {
                         //should extract this to a valriable because we doing the same job twice
                         powerTools.add(tools.get(i));
                     }

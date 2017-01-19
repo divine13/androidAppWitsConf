@@ -1,6 +1,7 @@
 package za.co.metalojiq.classfinder.witsconf.activity;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,11 +29,14 @@ public class MainActivity extends AppCompatActivity {
     public static final String LANGUAGE = "programmingLanguage";
     //constants are in caps in Java separated with under score not camelcase
     public static final String NAME = "programmerName";
+    private static final String TAG = "MainActivity";
+
     //this variable has global scope in this class becuase we need to acces it in the findPowerTool(View view) onBtn click function
     String selectedItem = "";
     //change all references
     EditText name;
     Intent intent; //used to send data to the list activity which will know what to do with the data
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +52,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         name = (EditText) findViewById(R.id.name); //need better naming
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+         spinner = (Spinner) findViewById(R.id.spinner);
 
         spinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, PowerTools.getLangAsArray()));
 
-        //spinner.getSelectedItem() return an object so we need to cast into a String class that is what the (String) is for
-        selectedItem = (String) spinner.getSelectedItem();
+//        //spinner.getSelectedItem() return an object so we need to cast into a String class that is what the (String) is for
+//        selectedItem = (String) spinner.getSelectedItem();  //cant do this here ?
 
    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -96,16 +101,19 @@ public class MainActivity extends AppCompatActivity {
     //this finction will be called when the user presses
     public void findPowerTool(View view) {
         if (name.getText().toString().trim().equals("")) {
-            name.setError("this is required, we need your name... for the some calculations...");
-            return; //this is so that we dont executed the code below and it does not start the other activity; I could have done it with else block but
+            name.setError("Name is required");
+            return; //this is so that we dont executed the code below and it does not start the
+            // other activity; I could have done it with else block but
             //this it to also show different return statements and their effects and saves me from writing more code ;)
         }
 
         intent = new Intent(this, ListActivity.class);
+        selectedItem = (String) spinner.getSelectedItem();
         intent.putExtra(LANGUAGE, selectedItem);
         //in java Hello and hello are different-> its case sensitive
         //ctrl-q to know what the method getText() does
-        intent.putExtra(NAME, name.getText());
+        Log.d(TAG, name.getText().toString() ); //debugging in android
+        intent.putExtra(NAME, name.getText().toString());
         startActivity(intent);
     }
 }
