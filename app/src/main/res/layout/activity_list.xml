@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="za.co.metalojiq.classfinder.witsconf.activity.MainActivity">
+    tools:context="za.co.metalojiq.classfinder.witsconf.activity.ListActivity">
 
-    <!--this is just boiler plate(code that just works) code so you can just look at content_main-->
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/content_list" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
