@@ -7,4 +7,10 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_love"
+        android:orderInCategory="100"
+        android:title="love list"
+        app:showAsAction="never" />
 </menu>

@@ -21,7 +21,7 @@
         <activity
             android:name=".activity.ListActivity"
             android:label="@string/title_activity_list"
-            android:theme="@style/AppTheme.NoActionBar" />
+             />
         <activity android:name=".activity.SimpleActivity"></activity>
     </application>
 
