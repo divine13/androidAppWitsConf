@@ -1,17 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--so that when the screen is small the user must be able to scroll -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_simple_activities"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="za.co.metalojiq.classfinder.witsconf.activity.SimpleActivity"
-    android:useDefaultMargins="true"
-    android:columnCount="2">
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="1dp"
+    tools:showIn="@layout/activity_main"
+    tools:context="za.co.metalojiq.classfinder.witsconf.activity.SimpleActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="41dp" />
+
+        <EditText
+            android:hint="Enter your Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@+id/textView"
+            android:textSize="24sp"
+            android:layout_alignParentTop="true" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Find Power tool"
+            android:layout_below="@+id/spinner"
+            android:id="@+id/button" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Language"
+            android:textSize="24sp"
+            android:layout_marginBottom="12dp"
+            android:layout_above="@+id/button"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
 
-<TextView
-    android:layout_row="0"
-    android:layout_rowSpan="1"
-    />
+    </RelativeLayout>
+</ScrollView>
 
-</GridLayout>

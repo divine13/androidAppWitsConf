@@ -1,6 +1,10 @@
 package za.co.metalojiq.classfinder.witsconf.model;
 
 import android.text.TextUtils;
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import za.co.metalojiq.classfinder.witsconf.R;
 
@@ -10,6 +14,7 @@ import za.co.metalojiq.classfinder.witsconf.R;
 
 //Java does not care about the order of methods like c++;
 //so you should always try to declare then soon after use it so that we the code is easier to read
+    //// TODO: 1/20/17  make this singular
 public class PowerTools {
     private String name;
     private String description;
@@ -106,6 +111,15 @@ public class PowerTools {
     public static enum LANGUAGE {
         JAVA, C_SHARP, CPP, C, GROOVY, JAVASCRIPT, KOTLIN,
         OBJECTIVE, PHP, PYTHON, RUBY, SCALA, SQL, SWIFT, DSL, HTML
+    }
+
+    public static List<String> getLangAsArray() {
+        ArrayList<String> languages = new ArrayList<>();
+        for ( LANGUAGE l : LANGUAGE.values() ) {
+            languages.add(l.name());
+        }
+        Log.d("AYEYEYEY", "iiiiii " +languages.size());
+        return languages;
     }
 
 
