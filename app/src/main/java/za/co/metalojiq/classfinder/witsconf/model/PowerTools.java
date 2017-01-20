@@ -14,7 +14,7 @@ import za.co.metalojiq.classfinder.witsconf.R;
 
 //Java does not care about the order of methods like c++;
 //so you should always try to declare then soon after use it so that we the code is easier to read
-    //// TODO: 1/20/17  make this singular
+//// TODO: 1/20/17  make this singular
 public class PowerTools {
     private String name;
     private String description;
@@ -115,10 +115,10 @@ public class PowerTools {
 
     public static List<String> getLangAsArray() {
         ArrayList<String> languages = new ArrayList<>();
-        for ( LANGUAGE l : LANGUAGE.values() ) {
+        for (LANGUAGE l : LANGUAGE.values()) {
             languages.add(l.name());
         }
-        Log.d("AYEYEYEY", "iiiiii " +languages.size());
+        Log.d("AYEYEYEY", "iiiiii " + languages.size());
         return languages;
     }
 
@@ -186,24 +186,24 @@ public class PowerTools {
             return R.drawable.dotmemory;
         } else if (TextUtils.equals(name, names[4])) {
             return R.drawable.dotpeek;
-        } else if (TextUtils.equals(name, names[5])) {
-            return R.drawable.hub;
+        } else if (TextUtils.equals(name, names[5])) { //dot trace
+            return R.drawable.dottrace;
         } else if (TextUtils.equals(name, names[6])) {
-            return R.drawable.intellij;
+            return R.drawable.hub;
         } else if (TextUtils.equals(name, names[7])) {
-            return R.drawable.kotlin;
+            return R.drawable.intellij;
         } else if (TextUtils.equals(name, names[8])) {
-            return R.drawable.mine;
+            return R.drawable.kotlin;
         } else if (TextUtils.equals(name, names[9])) {
-            return R.drawable.mps;
+            return R.drawable.mine;
         } else if (TextUtils.equals(name, names[10])) {
-            return R.drawable.phpstorm;
+            return R.drawable.mps;
         } else if (TextUtils.equals(name, names[11])) {
-            return R.drawable.pycharm;
+            return R.drawable.phpstorm;
         } else if (TextUtils.equals(name, names[12])) {
-            return R.drawable.resharperpp;
+            return R.drawable.pycharm;
         } else if (TextUtils.equals(name, names[13])) {
-            return R.drawable.resharper;
+            return R.drawable.resharperpp;
         } else if (TextUtils.equals(name, names[14])) {
             return R.drawable.resharper;
         } else if (TextUtils.equals(name, names[15])) {
