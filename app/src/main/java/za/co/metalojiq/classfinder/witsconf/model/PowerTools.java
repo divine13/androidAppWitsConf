@@ -118,7 +118,6 @@ public class PowerTools {
         for (LANGUAGE l : LANGUAGE.values()) {
             languages.add(l.name());
         }
-        Log.d("AYEYEYEY", "iiiiii " + languages.size());
         return languages;
     }
 
@@ -216,8 +215,7 @@ public class PowerTools {
             return R.drawable.upsource;
         } else if (TextUtils.equals(name, names[19])) {
             return R.drawable.webstorm;
-        }
-        if (TextUtils.equals(name, names[20])) {
+        } else if (TextUtils.equals(name, names[20])) {
             return R.drawable.yt;
         } else {
             return R.drawable.draw9;
