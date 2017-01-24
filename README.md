@@ -1,5 +1,5 @@
 # Android App
-#### we will  be coding this app at the wits meet up on the 25th from 13:00 to 14:00 please come with your laptop because we will be coding together and helping each other at the same time.
+#### we will  be coding this app at the wits meet up on the 26th from 13:00 to 14:00 UG Seminar Building Wits  please come with your laptop because we will be coding together and helping each other at the same time.
 
 what this app is that it has a spinner aka dropdown menu, where you can select your favorite language and then it can show you the
 best IDE for your favorite language. we will learn a lot from this app from this app you will also be able to create your own android application
@@ -39,6 +39,10 @@ If you get any error while trying to run this app please add an issue on our [Yo
 If you get a **JAVA_HOME** not defined error checkout this link [here](https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html)
  * the default directory of your java installation is at C:\Program Files\Java\jdkXXX
  
+ #Stay in touch
+ we also have a [facebook group](https://web.facebook.com/groups/1779060162363763/)
+ 
+ you can can contact us on 0641091553 if you need directions or any urgant infomation
 
  
  
